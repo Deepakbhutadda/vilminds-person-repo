@@ -5,45 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style>
-input[type=text], select {
-    width: 35%;
-    padding: 2px 2px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}	
-body{
-	background-color:black;
-	}
-h3{
-	color:blue;
-}
-range{
-	color:green;
-}
-div
-{
-	float: left;
-   margin-left: 400px;
-   margin-top : 10px;
-   padding: 10px;
-   max-width: 1000px;
-   height: 950px;
-   border-radius: 25px;
-   border: 20px solid skyblue;
-   background-color:white;
-}
-input[type=submit] {
-    width: 25%;
-    background-color: skyblue;
-	color:white;
-	padding:1px 1px;
-	}
-</style>
-
+<link rel="stylesheet" type="text/css" href="css/register.css" />
 </head>
 <body>
 
