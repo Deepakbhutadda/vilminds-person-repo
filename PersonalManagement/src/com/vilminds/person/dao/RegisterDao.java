@@ -9,25 +9,30 @@ public class RegisterDao {
 	
 	private Connection getConnection()
 	{
+		
 		Connection con = null;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vilminds?", "root", "password@123");
+			try {
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vilminds", "root", "password@123");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return con;
+		
 	}
+	
 
-	public void insertData(String gender,String firstName,String lastName,String city,String country,
-			String dob,int points,String company,String userName,String eMail, String password,
-			String rePassword,String description) {
+	public void insertPersonal(String gender,String firstName,String lastName,String city,String country,
+			String dob,int age,String company,String userName,String eMail, String password,
+			String description) {
 		// TODO Auto-generated method stub
 		System.out.println("Gender= "+gender);
 		System.out.println("FirstName= "+firstName);
@@ -35,15 +40,48 @@ public class RegisterDao {
 		System.out.println("City= "+city);
 		System.out.println("Country= "+country);
 		System.out.println("Dob= "+dob);
-		System.out.println("Age= "+points);
+		System.out.println("Age= "+age);
 		System.out.println("Company= "+company);
 		System.out.println("UserName= "+userName);
 		System.out.println("Email= "+eMail);
 		System.out.println("Password= "+password);
-		System.out.println("Re-Password= "+rePassword);
-		System.out.println("Descriptioon= "+description);
+		System.out.println("Description= "+description);
+		
+		Connection con=getConnection();
+		
+		
+		String sql = "INSERT INTO `vilminds'.'personal` VALUES ('"+gender+"', '"+firstName+"', '"+lastName+"', '"+city+"', '"+ country+"', '"+dob+"', '"+age+"', '"+company+"', '"+userName+"', '"+eMail+"', '"+password+"', '"+description+"');";
+		
+		try {
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+			System.out.println("Values Inserted Successfully");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Error occured while Inserting values:"+e.getMessage());
+			e.printStackTrace();
+			
+		}
+		
 	}
+	
 
+	public void deletePersonal(String firstName1)
+	{
+		Connection con = getConnection();
+		
+		String sql = "DELETE FROM `personal` WHERE `firstName`='"+firstName1+"'";
+		
+		try {
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+			System.out.println("Values are updated");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }
 
 

@@ -1,4 +1,4 @@
-package com.vilminds.servlet;
+package com.vilminds.person.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.vilminds.person.delegate.PersonDelegateImpl;
+
 public class RegisterServlet extends HttpServlet {
 	
 	
@@ -16,36 +18,38 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		response.setContentType("text/html");
 		System.out.println("<h3>User Information</h3>");
 		PrintWriter out = response.getWriter();
-		String gen = request.getParameter("gender");
-		String fname = request.getParameter("firstName");
-		String lname = request.getParameter("lastName");
-		String cityname = request.getParameter("city");
-		String countryname = request.getParameter("country");
-		String date = request.getParameter("dob");
-		int age = Integer.parseInt("points");
-		String cmpy = request.getParameter("company");
-		String uname = request.getParameter("userName");
-		String email = request.getParameter("eMail");
-		String pass = request.getParameter("password");
-		String pass1 = request.getParameter("rePassword");
-		String desc = request.getParameter("description");
+		String gender = request.getParameter("gender");
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String city = request.getParameter("city");
+		String country = request.getParameter("country");
+		String dob = request.getParameter("dob");
+		System.out.println(request.getParameter("age"));
+		int age = Integer.parseInt(request.getParameter("age"));
+		String company = request.getParameter("company");
+		String userName = request.getParameter("userName");
+		String eMail = request.getParameter("eMail");
+		String password = request.getParameter("password");
+		String description = request.getParameter("description");
+		
+		
+		
 		
 		PersonDelegateImpl register = new PersonDelegateImpl();
-		register.insertData(fname,lname);
+		register.insertPersonal(gender,firstName, lastName,city, country, dob,age,company,userName,eMail, password, description);
 		
-		out.println("Gender is "+gen);
-		out.println("First Name is "+fname);
-		out.println("Last Name is "+lname);
-		out.println("City is "+cityname);
-		out.println("Country is "+countryname);
-		out.println("Dob is "+date);
-		out.println("Age is "+age);
-		out.println("company is "+cmpy);
-		out.println("userName is "+uname);
-		out.println("eMail is "+email);
-		out.println("password is "+pass);
-		out.println("rePassword is "+pass1);
-		out.println("description is "+desc);
+		out.println("Gender is "+gender);
+		out.println("firstName is "+firstName);
+		out.println("lastName is "+lastName);
+		out.println("city is "+city);
+		out.println("country is "+country);
+		out.println("dob is "+dob);
+		out.println("age is "+age);
+		out.println("company is "+company);
+		out.println("userName is "+userName);
+		out.println("eMail is "+eMail);
+		out.println("password is "+password);
+		out.println("description is "+description);
 	}
 	
 

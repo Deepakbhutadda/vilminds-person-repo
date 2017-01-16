@@ -2,6 +2,24 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>PersonalManagement</display-name>
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>home.jsp</welcome-file>
     </welcome-file-list>
+     <servlet>
+  <servlet-name>loginServlet</servlet-name>
+  <servlet-class>com.vilminds.person.servlet.LoginServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>loginServlet</servlet-name>
+   <url-pattern>/loginServletpath</url-pattern>
+  </servlet-mapping>
+    
+    
+    <servlet>
+    <servlet-name>registerServlet</servlet-name>
+    <servlet-class>com.vilminds.person.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>registerServlet</servlet-name>
+    <url-pattern>/registerServletpath</url-pattern>
+    </servlet-mapping>
 </web-app>

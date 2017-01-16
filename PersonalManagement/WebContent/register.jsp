@@ -36,9 +36,9 @@ City/Town:<t>
   </select><br><br> 
 
 Date of Birth:*<t>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Age 55:<br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Age:<br>
 <input type="date" name="dob" required><t>
-&nbsp &nbsp <input type="range" name="points" min="18" max="100"><br><br>
+&nbsp &nbsp <input type="text" name="age"><br><br>
 
 Company:&nbsp &nbsp <t>
 &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Do you have pet:<br>
