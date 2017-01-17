@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/Softwares/Vilminds Training/mysql-connector-java-5.1.21.jar"/>
+	<classpathentry kind="lib" path="C:/Users/S/Downloads/mysql-connector-java-6.0.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

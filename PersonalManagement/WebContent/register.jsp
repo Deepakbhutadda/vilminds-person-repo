@@ -22,8 +22,8 @@
 
 First Name:*<t> 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Last Name:*<br>
-<input type="text" name="firstname" required><t>
-&nbsp &nbsp <input type="text" name="lastname" required><br><br>
+<input type="text" name="firstName" required><t>
+&nbsp &nbsp <input type="text" name="lastName" required><br><br>
 
 City/Town:<t>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp Country:<br>
@@ -50,12 +50,12 @@ Company:&nbsp &nbsp <t>
 <h3>2.Account information:</h3>
 User Name:*<t> 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Email:*<br>
-<input type="text" name="username" required><t>
-&nbsp &nbsp <input type="text" name="email" required><br><br>
+<input type="text" name="userName" required><t>
+&nbsp &nbsp <input type="text" name="eMail" required><br><br>
 
 Password:*<t>&nbsp 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Re-enter Password:*<br>
-<input type="password" name="pass" required><t>
+<input type="password" name="password" required><t>
 &nbsp &nbsp <input type="password" name="pass" required><br>
 
 <h3>3.A few word about yourself</h3>

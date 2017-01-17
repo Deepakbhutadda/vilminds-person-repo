@@ -12,7 +12,7 @@
 
 <h1 align="center">LOGIN</h1>
 <div align="center">
-<form action="simpleServletpath" method="post">
+<form action="loginServletpath" method="post">
 <input type="text" name="userid" placeholder="Username" required>
 <br><br>
 <input type="password" name="psw" placeholder="Password" required><br><br>

@@ -35,23 +35,23 @@ public class RegisterDao {
 			String description) {
 		// TODO Auto-generated method stub
 		System.out.println("Gender= "+gender);
-		System.out.println("FirstName= "+firstName);
-		System.out.println("LastName= "+lastName);
-		System.out.println("City= "+city);
-		System.out.println("Country= "+country);
-		System.out.println("Dob= "+dob);
-		System.out.println("Age= "+age);
-		System.out.println("Company= "+company);
-		System.out.println("UserName= "+userName);
-		System.out.println("Email= "+eMail);
-		System.out.println("Password= "+password);
-		System.out.println("Description= "+description);
+		System.out.println("firstName= "+firstName);
+		System.out.println("lastName= "+lastName);
+		System.out.println("city= "+city);
+		System.out.println("country= "+country);
+		System.out.println("dob= "+dob);
+		System.out.println("age= "+age);
+		System.out.println("company= "+company);
+		System.out.println("userName= "+userName);
+		System.out.println("eMail= "+eMail);
+		System.out.println("password= "+password);
+		System.out.println("description= "+description);
 		
 		Connection con=getConnection();
 		
+		String sql = " INSERT INTO `vilminds`.`personal` VALUES ('"+gender+"', '"+firstName+"', '"+lastName+"', '"+city+"', '"+country+"', '"+dob+"', '"+age+"', '"+company+"', '"+userName+"', '"+eMail+"', '"+password+"', '"+description+"');";
 		
-		String sql = "INSERT INTO `vilminds'.'personal` VALUES ('"+gender+"', '"+firstName+"', '"+lastName+"', '"+city+"', '"+ country+"', '"+dob+"', '"+age+"', '"+company+"', '"+userName+"', '"+eMail+"', '"+password+"', '"+description+"');";
-		
+		System.out.println("SQL Query"+sql);
 		try {
 			Statement stmt = con.createStatement();
 			stmt.executeUpdate(sql);
@@ -71,7 +71,7 @@ public class RegisterDao {
 		Connection con = getConnection();
 		
 		String sql = "DELETE FROM `personal` WHERE `firstName`='"+firstName1+"'";
-		
+		System.out.println("SQL Query"+sql);
 		try {
 			Statement stmt = con.createStatement();
 			stmt.executeUpdate(sql);

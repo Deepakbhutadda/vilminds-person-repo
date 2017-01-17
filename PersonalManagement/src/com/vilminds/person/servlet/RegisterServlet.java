@@ -36,7 +36,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		
 		PersonDelegateImpl register = new PersonDelegateImpl();
-		register.insertPersonal(gender,firstName, lastName,city, country, dob,age,company,userName,eMail, password, description);
+		register.insertPersonal(gender,firstName,lastName,city,country,dob,age,company,userName,eMail,password,description);
 		
 		out.println("Gender is "+gender);
 		out.println("firstName is "+firstName);
