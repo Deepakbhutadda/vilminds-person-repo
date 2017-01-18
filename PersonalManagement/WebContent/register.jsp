@@ -42,7 +42,7 @@ Date of Birth:*<t>
 
 Company:&nbsp &nbsp <t>
 &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Do you have pet:<br>
-<input type="text" name="country"><t>
+<input type="text" name="company"><t>
 &nbsp &nbsp <input type="checkbox" name="pet" value="dog"> Dog<t>
 
 <input type="checkbox" name="pet" value="cat"> Cat<br>
@@ -59,7 +59,7 @@ Password:*<t>&nbsp
 &nbsp &nbsp <input type="password" name="pass" required><br>
 
 <h3>3.A few word about yourself</h3>
-<textarea rows="6" cols="50">
+<textarea rows="6" cols="50" name="description">
 </textarea><br>
 
 <h3>4. Terms and Conditions:</h3>

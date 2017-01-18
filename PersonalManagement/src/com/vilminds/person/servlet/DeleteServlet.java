@@ -8,18 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginServlet extends HttpServlet {
-	
+public class DeleteServlet extends HttpServlet {
 	
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String userName = request.getParameter("userid");
-		out.println("Successfully Login");
+		String eMail = request.getParameter("eMail");
+		out.println("Deleted Successfully");
 		
 	}
 
 }
-
-

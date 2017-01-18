@@ -22,4 +22,13 @@
     <servlet-name>registerServlet</servlet-name>
     <url-pattern>/registerServletpath</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+    <servlet-name>deleteServlet</servlet-name>
+    <servlet-class>com.vilminds.person.servlet.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>deleteServlet</servlet-name>
+    <url-pattern>/deleteServletpath</url-pattern>
+    </servlet-mapping>
 </web-app>

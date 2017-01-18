@@ -13,8 +13,20 @@ public class PersonServiceImpl implements PersonService {
 		RegisterDao register = new RegisterDao();
 		register.insertPersonal(gender,firstName,lastName,city,country,dob,age,company,userName,eMail, password, description); 
 	}
+
+	public void deletePersonal(String eMail) {
+		// TODO Auto-generated method stub
+		
+		RegisterDao register = new RegisterDao();
+		register.deletePersonal(eMail);
+		
+	}
 	
-	
+	public void displayPersonal()
+	{
+		RegisterDao register = new RegisterDao();
+		register.displayPersonal();
+	}
 	
 	
 }

@@ -14,5 +14,17 @@ public class PersonDelegateImpl implements PersonDelegate {
 		personservice.insertPersonal(gender,firstName, lastName,city, country,dob,age,company,userName,eMail, password, description);
 		
 	}
+	
+	public void deletePersonal(String eMail)
+	{
+		PersonServiceImpl personservice = new PersonServiceImpl();
+		personservice.deletePersonal(eMail);
+	}
 
+	public void displayPersonal()
+	{
+		PersonServiceImpl personservice = new PersonServiceImpl();
+		personservice.displayPersonal();
+	}
+	
 }

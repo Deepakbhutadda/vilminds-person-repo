@@ -2,6 +2,7 @@ package com.vilminds.person.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -66,11 +67,11 @@ public class RegisterDao {
 	}
 	
 
-	public void deletePersonal(String firstName1)
+	public void deletePersonal(String eMail)
 	{
 		Connection con = getConnection();
 		
-		String sql = "DELETE FROM `personal` WHERE `firstName`='"+firstName1+"'";
+		String sql = "DELETE FROM `personal` WHERE `eMail`='"+eMail+"'";
 		System.out.println("SQL Query"+sql);
 		try {
 			Statement stmt = con.createStatement();
@@ -78,6 +79,61 @@ public class RegisterDao {
 			System.out.println("Values are updated");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+	public void displayPersonal()
+	{
+		Connection con = getConnection();
+		
+		String sql = "SELECT * FROM personal;";
+		
+		ResultSet rs = null;
+		
+		try {
+			Statement stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				
+				String userName = rs.getString("userName");
+				
+				
+				
+				System.out.println("userName: "+userName);
+			}	
+			
+			} catch (SQLException e) {
+			System.err.println("Error occured Displaying personal");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}	
+	
+	
+	public void searchPersonal(String firstName2)
+	{
+		Connection con = getConnection();
+		
+		String sql = "SELECT * FROM personal WHERE firstName= '"+firstName2+"'";
+		
+		
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql); 
+			
+			while(rs.next())
+			{
+				String firstName = rs.getString("firstName");
+				
+				System.out.println("firstName: "+firstName);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Error occured while Searching personal");
 			e.printStackTrace();
 		}
 	}
