@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.sun.org.apache.bcel.internal.generic.RET;
+import com.vilminds.person.model.Person;
 
 public class RegisterDao {
 	
@@ -84,7 +88,7 @@ public class RegisterDao {
 	}
 
 	
-	public void displayPersonal()
+	public ArrayList<Person> displayPersonal()
 	{
 		Connection con = getConnection();
 		
@@ -92,17 +96,49 @@ public class RegisterDao {
 		
 		ResultSet rs = null;
 		
+		ArrayList<Person> personList = new ArrayList<Person>();
 		try {
 			Statement stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while(rs.next())
 			{
 				
-				String userName = rs.getString("userName");
+				Person per = new Person();
+				
+				String gender1 = rs.getString("gender");
+				String firstName1 = rs.getString("firstName");
+				String lastName1 = rs.getString("lastName");
+				String city1 = rs.getString("city");
+				String country1 = rs.getString("country");
+				System.out.println(rs.getString("age"));
+				int age1 = Integer.parseInt(rs.getString("age"));
+				String company1 = rs.getString("company");
+				String userName1 = rs.getString("userName");
+				String eMail1 = rs.getString("eMail");
+
+				per.setGender(gender1);
+				per.setFirstName(firstName1);
+				per.setLastName(lastName1);
+				per.setCity(city1);
+				per.setCountry(country1);
+				per.setAge(age1);
+				per.setCompany(company1);
+				per.setUserName(userName1);
+				per.seteMail(eMail1);
 				
 				
+				System.out.println("Gender= "+gender1);
+				System.out.println("firstName= "+firstName1);
+				System.out.println("lastName= "+lastName1);
+				System.out.println("city= "+city1);
+				System.out.println("country= "+country1);
+				System.out.println("age= "+age1);
+				System.out.println("company= "+company1);
+				System.out.println("userName= "+userName1);
+				System.out.println("eMail= "+eMail1);
 				
-				System.out.println("userName: "+userName);
+				personList.add(per);
+								
 			}	
 			
 			} catch (SQLException e) {
@@ -110,7 +146,10 @@ public class RegisterDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		  return personList;
+		
 	}	
+	
 	
 	
 	public void searchPersonal(String firstName2)
@@ -137,7 +176,9 @@ public class RegisterDao {
 			e.printStackTrace();
 		}
 	}
-	
+
+
+
 }
 
 

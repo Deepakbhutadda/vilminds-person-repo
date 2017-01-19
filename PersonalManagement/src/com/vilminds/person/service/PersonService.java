@@ -1,5 +1,9 @@
 package com.vilminds.person.service;
 
+import java.util.ArrayList;
+
+import com.vilminds.person.model.Person;
+
 
 public interface PersonService {
 	
@@ -9,7 +13,7 @@ public interface PersonService {
 	
 	public void deletePersonal(String eMail); 
 	
-	public void displayPersonal();
+	public ArrayList<Person> displayPersonal();
 	
 
 }

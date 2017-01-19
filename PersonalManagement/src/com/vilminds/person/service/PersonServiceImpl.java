@@ -1,6 +1,9 @@
 package com.vilminds.person.service;
 
+import java.util.ArrayList;
+
 import com.vilminds.person.dao.RegisterDao;
+import com.vilminds.person.model.Person;
 import com.vilminds.person.service.PersonService;
 
 public class PersonServiceImpl implements PersonService {
@@ -22,11 +25,13 @@ public class PersonServiceImpl implements PersonService {
 		
 	}
 	
-	public void displayPersonal()
+	public ArrayList<Person> displayPersonal()
 	{
 		RegisterDao register = new RegisterDao();
-		register.displayPersonal();
+		return register.displayPersonal();
 	}
+
+
 	
 	
 }

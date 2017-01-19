@@ -1,5 +1,8 @@
 package com.vilminds.person.delegate;
 
+import java.util.ArrayList;
+
+import com.vilminds.person.model.Person;
 import com.vilminds.person.service.PersonServiceImpl;
 
 public class PersonDelegateImpl implements PersonDelegate {
@@ -21,10 +24,12 @@ public class PersonDelegateImpl implements PersonDelegate {
 		personservice.deletePersonal(eMail);
 	}
 
-	public void displayPersonal()
+	public ArrayList<Person> displayPersonal()
 	{
 		PersonServiceImpl personservice = new PersonServiceImpl();
-		personservice.displayPersonal();
+		
+		return personservice.displayPersonal();
 	}
-	
+
+
 }

@@ -13,7 +13,7 @@
 
 <h1>Create a free account</h1>
 
-<form action="registerServletpath" method="post">
+<form action="personServletpath" method="post">
 <h3>1.Personal Information:</h3>
 
 <right>Select a gender:<right><t>

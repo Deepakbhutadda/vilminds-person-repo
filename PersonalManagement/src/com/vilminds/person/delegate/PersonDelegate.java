@@ -1,5 +1,9 @@
 package com.vilminds.person.delegate;
 
+import java.util.ArrayList;
+
+import com.vilminds.person.model.Person;
+
 public interface PersonDelegate {
 	
 	public void insertPersonal(String gender,String firstName,String lastName,String city,String country,
@@ -8,5 +12,5 @@ public interface PersonDelegate {
 	
 	public void deletePersonal(String eMail);
 
-	public void displayPersonal();
+	public ArrayList<Person> displayPersonal();
 }

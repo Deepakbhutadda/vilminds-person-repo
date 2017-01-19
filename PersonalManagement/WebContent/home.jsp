@@ -35,12 +35,12 @@
 		</div>
 		<div id="column2">
 			<p><img src="Images/display.png" width="300" height="150" alt="display" /></p>
-			<h2 align="center"><a href="display.jsp">Display</h2>
+			<h2 align="center"><a href="personServletpath?action=getPersons">Display</h2>
 	
 		</div>
 		<div id="column3">
 			<p><img src="Images/remove.png" width="300" height="150" alt="remove" /></p>
-			<h2 align="center"><a href="delete.jsp">Delete</h2>
+			<h2 align="center"><a href="personServletpath">Delete</h2>
 			
 		</div>
 	</div>
