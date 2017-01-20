@@ -18,6 +18,7 @@ public class PersonDelegateImpl implements PersonDelegate {
 		
 	}
 	
+	
 	public void deletePersonal(String eMail)
 	{
 		PersonServiceImpl personservice = new PersonServiceImpl();
@@ -29,6 +30,15 @@ public class PersonDelegateImpl implements PersonDelegate {
 		PersonServiceImpl personservice = new PersonServiceImpl();
 		
 		return personservice.displayPersonal();
+	}
+
+	@Override
+	public void updatePersonal(String gender,String firstName,String lastName,String city,String country,
+			int age,String company,String userName,String eMail) {
+		// TODO Auto-generated method stub
+		
+		PersonServiceImpl personservice = new PersonServiceImpl();
+		personservice.updatePersonal(gender,firstName,lastName,city,country,age,company,userName,eMail);
 	}
 
 

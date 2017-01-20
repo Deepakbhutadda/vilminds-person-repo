@@ -70,6 +70,28 @@ public class RegisterDao {
 		
 	}
 	
+	public void updatePersonal(String gender,String firstName,String lastName,String city,String country,
+			int age,String company,String userName,String eMail)
+	{
+			Connection con=getConnection();
+			
+			String sql = "UPDATE `personal` SET `gender`='"+gender+"',`firstName`='"+firstName+"',"
+					+ "							`lastName`='"+lastName+"',`city`='"+city+"',`country`='"+country+"',`age`='"+age+"',"
+							+ "					`company`='"+company+"',`userName`='"+userName+"' WHERE `eMail`='"+eMail+"'";
+
+			try {
+				Statement stmt = con.createStatement();
+				stmt.executeUpdate(sql);
+				System.out.println("Updated Successfully");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				System.err.println("Error occured while Updateing personal:");
+				e.printStackTrace();
+
+			}
+	}
+	
+	
 
 	public void deletePersonal(String eMail)
 	{

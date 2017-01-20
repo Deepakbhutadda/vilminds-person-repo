@@ -39,8 +39,8 @@
 	
 		</div>
 		<div id="column3">
-			<p><img src="Images/remove.png" width="300" height="150" alt="remove" /></p>
-			<h2 align="center"><a href="personServletpath">Delete</h2>
+			<p><img src="Images/search.png" width="300" height="150" alt="search" /></p>
+			<h2 align="center"><a href="personServletpath">Search</h2>
 			
 		</div>
 	</div>

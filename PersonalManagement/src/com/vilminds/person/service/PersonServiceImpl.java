@@ -17,6 +17,8 @@ public class PersonServiceImpl implements PersonService {
 		register.insertPersonal(gender,firstName,lastName,city,country,dob,age,company,userName,eMail, password, description); 
 	}
 
+	
+	
 	public void deletePersonal(String eMail) {
 		// TODO Auto-generated method stub
 		
@@ -29,6 +31,15 @@ public class PersonServiceImpl implements PersonService {
 	{
 		RegisterDao register = new RegisterDao();
 		return register.displayPersonal();
+	}
+
+	public void updatePersonal(String gender,String firstName,String lastName,String city,String country,
+			int age,String company,String userName,String eMail) {
+		// TODO Auto-generated method stub
+		
+		RegisterDao register = new RegisterDao();
+		register.updatePersonal(gender,firstName,lastName,city,country,age,company,userName,eMail);
+		
 	}
 
 

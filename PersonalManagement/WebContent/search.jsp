@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/delete.css" />
+<link rel="stylesheet" type="text/css" href="css/search.css" />
 </head>
 <body>
 <div align="center">
-<form action="deleteServletpath" method="post">
+<form action="personServletpath" method="post">
 Delete By Email:
 <input type="text" name=eMail><t>
 <input type="submit">
