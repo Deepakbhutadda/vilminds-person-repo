@@ -16,5 +16,9 @@ public interface PersonDelegate {
 
 	public ArrayList<Person> displayPersonal();
 
-	void updatePersonal(String gender,String firstName,String lastName,String city,String country,int age,String company,String userName,String eMail);
+	public void updatePersonal(String firstName,String lastName,String city,String country,int age,String company,String userName,String eMail);
+
+
+
+	
 }

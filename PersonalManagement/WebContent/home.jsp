@@ -19,6 +19,7 @@
 					<li class="current_page_item"><a href="#">Homepage</a></li>
 					<li><a href="login.jsp">Login</a></li>
 					
+					
 				</ul>
 			</div>
 		</div>
@@ -35,12 +36,12 @@
 		</div>
 		<div id="column2">
 			<p><img src="Images/display.png" width="300" height="150" alt="display" /></p>
-			<h2 align="center"><a href="personServletpath?action=getPersons">Display</h2>
+			<h2 align="center"><a href="personServletpath?action=getAllPersons">Display</h2>
 	
 		</div>
 		<div id="column3">
 			<p><img src="Images/search.png" width="300" height="150" alt="search" /></p>
-			<h2 align="center"><a href="personServletpath">Search</h2>
+			<h2 align="center"><a href="search.jsp">Search</a></h2>
 			
 		</div>
 	</div>

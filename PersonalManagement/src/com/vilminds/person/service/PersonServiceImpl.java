@@ -33,16 +33,27 @@ public class PersonServiceImpl implements PersonService {
 		return register.displayPersonal();
 	}
 
-	public void updatePersonal(String gender,String firstName,String lastName,String city,String country,
+	public void updatePersonal(String firstName,String lastName,String city,String country,
 			int age,String company,String userName,String eMail) {
 		// TODO Auto-generated method stub
 		
 		RegisterDao register = new RegisterDao();
-		register.updatePersonal(gender,firstName,lastName,city,country,age,company,userName,eMail);
+		register.updatePersonal(firstName,lastName,city,country,age,company,userName,eMail);
 		
 	}
 
+	public Person getPersonDetail(String eMail) {
+		// TODO Auto-generated method stub
+		RegisterDao register = new RegisterDao();
+		return register.getPersonDetail(eMail);
+	}
 
+
+	public ArrayList<Person> searchPersonal(String firstName)
+	{
+		RegisterDao register = new RegisterDao();
+		return register.searchPersonal(firstName);
+	}
 	
 	
 }

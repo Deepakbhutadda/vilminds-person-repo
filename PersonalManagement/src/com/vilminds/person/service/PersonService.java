@@ -15,8 +15,9 @@ public interface PersonService {
 	
 	public ArrayList<Person> displayPersonal();
 	
-	public void updatePersonal(String gender,String firstName,String lastName,String city,String country,
+	public void updatePersonal(String firstName,String lastName,String city,String country,
 	int age,String company,String userName,String eMail);
 	
-
+	public ArrayList<Person> searchPersonal(String firstName);
+	
 }

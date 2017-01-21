@@ -16,6 +16,7 @@
 <form action="personServletpath" method="post">
 <h3>1.Personal Information:</h3>
 
+<input type="hidden" name="action" value="register"/>
 <right>Select a gender:<right><t>
 <input type="radio" name="gender" value="male"> Male<t>
 &nbsp &nbsp <input type="radio" name="gender" value="female">Female<br><br>

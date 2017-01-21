@@ -39,18 +39,7 @@ public class RegisterDao {
 			String dob,int age,String company,String userName,String eMail, String password,
 			String description) {
 		// TODO Auto-generated method stub
-		System.out.println("Gender= "+gender);
-		System.out.println("firstName= "+firstName);
-		System.out.println("lastName= "+lastName);
-		System.out.println("city= "+city);
-		System.out.println("country= "+country);
-		System.out.println("dob= "+dob);
-		System.out.println("age= "+age);
-		System.out.println("company= "+company);
-		System.out.println("userName= "+userName);
-		System.out.println("eMail= "+eMail);
-		System.out.println("password= "+password);
-		System.out.println("description= "+description);
+		
 		
 		Connection con=getConnection();
 		
@@ -70,15 +59,15 @@ public class RegisterDao {
 		
 	}
 	
-	public void updatePersonal(String gender,String firstName,String lastName,String city,String country,
+	public void updatePersonal(String firstName,String lastName,String city,String country,
 			int age,String company,String userName,String eMail)
 	{
 			Connection con=getConnection();
 			
-			String sql = "UPDATE `personal` SET `gender`='"+gender+"',`firstName`='"+firstName+"',"
-					+ "							`lastName`='"+lastName+"',`city`='"+city+"',`country`='"+country+"',`age`='"+age+"',"
-							+ "					`company`='"+company+"',`userName`='"+userName+"' WHERE `eMail`='"+eMail+"'";
-
+			String sql = "UPDATE `personal` SET `firstName`='"+firstName+"',`lastName`='"+lastName+"',`city`='"+city+"',`country`='"+country+"',`age`='"+age+"',`company`='"+company+"',`userName`='"+userName+"' WHERE `eMail`='"+eMail+"'";
+			System.out.println("Person update query"+sql);
+			
+			
 			try {
 				Statement stmt = con.createStatement();
 				stmt.executeUpdate(sql);
@@ -87,7 +76,6 @@ public class RegisterDao {
 				// TODO Auto-generated catch block
 				System.err.println("Error occured while Updateing personal:");
 				e.printStackTrace();
-
 			}
 	}
 	
@@ -149,15 +137,6 @@ public class RegisterDao {
 				per.seteMail(eMail1);
 				
 				
-				System.out.println("Gender= "+gender1);
-				System.out.println("firstName= "+firstName1);
-				System.out.println("lastName= "+lastName1);
-				System.out.println("city= "+city1);
-				System.out.println("country= "+country1);
-				System.out.println("age= "+age1);
-				System.out.println("company= "+company1);
-				System.out.println("userName= "+userName1);
-				System.out.println("eMail= "+eMail1);
 				
 				personList.add(per);
 								
@@ -172,13 +151,60 @@ public class RegisterDao {
 		
 	}	
 	
-	
-	
-	public void searchPersonal(String firstName2)
+	public ArrayList<Person> searchPersonal(String firstName)
 	{
 		Connection con = getConnection();
 		
-		String sql = "SELECT * FROM personal WHERE firstName= '"+firstName2+"'";
+		String sql = "SELECT * FROM personal WHERE firstName= '"+firstName+"'";
+		ArrayList<Person> personSearch = new ArrayList<Person>();
+		
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql); 
+			
+			while(rs.next())
+			{
+				Person per = new Person();
+				
+				String gender1 = rs.getString("gender");
+				String firstName1 = rs.getString("firstName");
+				String lastName1 = rs.getString("lastName");
+				String city1 = rs.getString("city");
+				String country1 = rs.getString("country");
+				System.out.println(rs.getString("age"));
+				int age1 = Integer.parseInt(rs.getString("age"));
+				String company1 = rs.getString("company");
+				String userName1 = rs.getString("userName");
+				String eMail1 = rs.getString("eMail");
+
+				per.setGender(gender1);
+				per.setFirstName(firstName1);
+				per.setLastName(lastName1);
+				per.setCity(city1);
+				per.setCountry(country1);
+				per.setAge(age1);
+				per.setCompany(company1);
+				per.setUserName(userName1);
+				per.seteMail(eMail1);
+				
+				personSearch.add(per);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Error occured while Searching personal");
+			e.printStackTrace();
+		}
+		
+		 return personSearch;
+	}
+
+
+	public Person getPersonDetail(String eMail) {
+		// TODO Auto-generated method stub
+		Connection con = getConnection();
+		Person person1 = new Person();
+		String sql = "SELECT * FROM personal WHERE eMail= '"+eMail+"'";
 		
 		
 		try {
@@ -187,9 +213,26 @@ public class RegisterDao {
 			
 			while(rs.next())
 			{
-				String firstName = rs.getString("firstName");
+
+				String firstName1 = rs.getString("firstName");
+				String lastName1 = rs.getString("lastName");
+				String city1 = rs.getString("city");
+				String country1 = rs.getString("country");
+				System.out.println(rs.getString("age"));
+				int age1 = Integer.parseInt(rs.getString("age"));
+				String company1 = rs.getString("company");
+				String userName1 = rs.getString("userName");
+				String eMail1 = rs.getString("eMail");
 				
-				System.out.println("firstName: "+firstName);
+				
+				person1.setFirstName(firstName1);
+				person1.setLastName(lastName1);
+				person1.setCity(city1);
+				person1.setCountry(country1);
+				person1.setAge(age1);
+				person1.setCompany(company1);
+				person1.setUserName(userName1);
+				person1.seteMail(eMail1);
 				
 			}
 		} catch (SQLException e) {
@@ -197,6 +240,8 @@ public class RegisterDao {
 			System.err.println("Error occured while Searching personal");
 			e.printStackTrace();
 		}
+		
+		return person1;
 	}
 
 
