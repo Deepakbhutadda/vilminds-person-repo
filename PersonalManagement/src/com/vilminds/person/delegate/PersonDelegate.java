@@ -18,7 +18,7 @@ public interface PersonDelegate {
 
 	public void updatePersonal(String firstName,String lastName,String city,String country,int age,String company,String userName,String eMail);
 
-
+	public void loginPersonal(String userName,String password);
 
 	
 }

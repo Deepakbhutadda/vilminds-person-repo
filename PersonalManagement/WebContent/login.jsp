@@ -12,10 +12,11 @@
 
 <h1 align="center">LOGIN</h1>
 <div align="center">
-<form action="loginServletpath" method="post">
-<input type="text" name="userid" placeholder="Username" required>
+<form action="personServletpath" method="post">
+<input type="hidden" name="action" value="loginPersonal"/>
+<input type="text" name="userName" placeholder="Username" required>
 <br><br>
-<input type="password" name="psw" placeholder="Password" required><br><br>
+<input type="password" name="password" placeholder="Password" required><br><br>
 <input type="Submit" value="SignIn"><br><br>
 </form>
 <a href="register.jsp"> Can't access account/register</a> 

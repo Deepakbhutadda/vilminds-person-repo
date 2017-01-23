@@ -88,7 +88,16 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 	}
 	
+	if(action.equals("loginPersonal"))
+	{
+		String userName = request.getParameter("userName");
+		String password = request.getParameter("password");
+		PrintWriter out = response.getWriter();
+		out.println("Welcome "+userName);
+	
 	}
+	
+}
 	
 
 	@Override

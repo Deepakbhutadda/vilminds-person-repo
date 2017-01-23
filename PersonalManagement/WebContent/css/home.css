@@ -19,7 +19,7 @@ body {
 #header-wrapper {
 	overflow: hidden;
 	height: 600px;
-	background: black;
+	background: white;
 }
 #logo {
 	float: left;
@@ -70,14 +70,14 @@ body {
 }
 
 #menu a {
-	display: block;
+	display: white;
 	margin-right: 1px;
 	padding: 10px 20px 10px 20px;
 	text-decoration: none;
 	text-align: center;
 	font-size: 13px;
 	font-weight: 300;
-	color: #FFFFFF;
+	color: black;
 	border: none;
 }
 
@@ -85,7 +85,7 @@ body {
 	height: 40px;
 	margin: 0 auto;
 	padding: 50px 0 15px 0;
-	background: black;
+	background: white;
 }
 
 #footer p {
@@ -94,7 +94,7 @@ body {
 	letter-spacing: 1px;
 	line-height: normal;
 	text-align: center;
-	color: white;
+	color: black;
 }
 
 #banner {

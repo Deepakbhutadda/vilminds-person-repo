@@ -55,5 +55,10 @@ public class PersonServiceImpl implements PersonService {
 		return register.searchPersonal(firstName);
 	}
 	
+	public void loginPersonal(String userName,String password)
+	{
+		RegisterDao register = new RegisterDao();
+		register.loginPersonal(userName,password);
+	}
 	
 }

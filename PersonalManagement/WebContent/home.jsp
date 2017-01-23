@@ -49,7 +49,7 @@
 	
 </div>
 <div id="footer">
-	<p>&copy; All rights reserved.<a href="home.jsp/">Vilminds Technologies</a></p>
+	<p>&copy; All rights reserved.<a href="#">Vilminds Technologies</a></p>
 </div>
 
 </body>
