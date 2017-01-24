@@ -241,20 +241,35 @@ public class RegisterDao {
 		return person1;
 	}
 
-	public void loginPersonal(String userName,String password)
+	public boolean loginPersonal(String userName,String password)
 	{
 		Connection con = getConnection();
 		
-		String sql = "SELECT * FROM personal WHERE userName= '"+userName+"', password= '"+password+"' ";
+		Person per1 = new Person();
+		boolean loginSuccess = false;
+		String sql = "SELECT * FROM personal WHERE userName= '"+userName+"' AND password= '"+password+"' ";
 		System.out.println("SQL Query"+sql);
 		try {
 			Statement stmt = con.createStatement();
-			stmt.executeUpdate(sql);
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next())
+			{
+				loginSuccess = true;
+				String userName1 = rs.getString("userName");
+				String password1 = rs.getString("password");
+				System.out.println("Login Success"+userName1);
+				
+				per1.setUserName(userName1);
+				per1.setUserName(password1);
+			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("loginSuccess value"+loginSuccess);
+		return loginSuccess;
 	}
 
 	
